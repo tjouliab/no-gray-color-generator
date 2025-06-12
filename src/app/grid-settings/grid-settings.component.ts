@@ -5,7 +5,7 @@ import { DEFAULT_GRID_SETTINGS, GridSettings } from '../grid-settings.model';
 import { combineLatest, debounceTime } from 'rxjs';
 import { takeUntilDestroyed, toObservable } from '@angular/core/rxjs-interop';
 
-const DEBOUNCE_MS = 10;
+const DEBOUNCE_MS = 300;
 
 @Component({
   selector: 'app-grid-settings',

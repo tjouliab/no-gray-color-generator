@@ -1,5 +1,9 @@
 <main class="main">
-  <app-color-grid></app-color-grid>
+  <app-grid-settings (settings)="gridSettingsEvent($event)" />
+  <app-color-grid
+    [grayScale]="settings().grayScale"
+    [gridSize]="settings().gridSize"
+  />
 </main>
 
 <router-outlet />

@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, effect, input } from '@angular/core';
 import { ColorUtils } from '../../utils/color.utils';
 
 @Component({
@@ -8,13 +8,16 @@ import { ColorUtils } from '../../utils/color.utils';
   styleUrl: './color-grid.component.scss',
 })
 export class ColorGridComponent {
-  protected size = input(10);
+  readonly gridSize = input.required<number>();
+  readonly grayScale = input.required<number>();
 
-  protected cells = computed(() =>
-    [...Array(this.size() ** 2)].map((_, index) =>
-      ColorUtils.noGrayColorGenerator(index, 0)
+  protected cells = computed<string[]>(() =>
+    [...Array(this.gridSize() ** 2)].map((_, index) =>
+      ColorUtils.noGrayColorGenerator(index, this.grayScale())
     )
   );
 
-  protected gridTemplateColumns = computed(() => `repeat(${this.size()}, 1fr)`);
+  protected gridTemplateColumns = computed<string>(
+    () => `repeat(${this.gridSize()}, 1fr)`
+  );
 }
