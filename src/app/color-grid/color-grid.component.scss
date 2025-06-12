@@ -1,0 +1,18 @@
+:root {
+  --grid-size: 5;
+}
+
+.grid-container {
+  width: 90vh;
+  height: 90vh;
+  display: grid;
+
+  grid-template-columns: repeat(var(--grid-size), 1fr);
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+}
+
+.grid-item {
+  // Constraint each cell to be squared
+  aspect-ratio: 1 / 1;
+}

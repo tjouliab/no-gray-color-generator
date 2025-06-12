@@ -1,1 +1,8 @@
-<p>color-grid works!</p>
+<div
+  class="grid-container"
+  [style.grid-template-columns]="gridTemplateColumns()"
+>
+  @for (cell of cells(); track $index) {
+  <div class="grid-item" [style.background]="cell"></div>
+  }
+</div>
