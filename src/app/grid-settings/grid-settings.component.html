@@ -1,0 +1,15 @@
+<div class="settings-container">
+  <div class="settings">
+    <p>Gray Scale</p>
+    <mat-slider min="0" max="100" step="1" discrete>
+      <input matSliderThumb [(ngModel)]="grayScale" />
+    </mat-slider>
+  </div>
+
+  <div class="settings">
+    <p>Grid Size</p>
+    <mat-slider min="10" max="200" step="10" discrete>
+      <input matSliderThumb [(ngModel)]="gridSize" />
+    </mat-slider>
+  </div>
+</div>
