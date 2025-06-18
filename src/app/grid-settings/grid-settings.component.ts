@@ -1,4 +1,4 @@
-import { Component, model, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, model, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatSliderModule } from '@angular/material/slider';
 import { DEFAULT_GRID_SETTINGS, GridSettings } from '../grid-settings.model';
@@ -12,6 +12,7 @@ const DEBOUNCE_MS = 300;
   imports: [MatSliderModule, FormsModule],
   templateUrl: './grid-settings.component.html',
   styleUrl: './grid-settings.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GridSettingsComponent {
   readonly settings = output<GridSettings>();

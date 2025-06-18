@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ColorGridComponent } from './color-grid/color-grid.component';
 import { GridSettingsComponent } from './grid-settings/grid-settings.component';
@@ -9,6 +9,7 @@ import { DEFAULT_GRID_SETTINGS, GridSettings } from './grid-settings.model';
   imports: [RouterOutlet, ColorGridComponent, GridSettingsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {
   readonly settings = signal<GridSettings>(DEFAULT_GRID_SETTINGS);

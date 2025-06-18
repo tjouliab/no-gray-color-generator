@@ -1,4 +1,4 @@
-import { Component, computed, effect, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { ColorUtils } from '../../utils/color.utils';
 
 @Component({
@@ -6,6 +6,7 @@ import { ColorUtils } from '../../utils/color.utils';
   imports: [],
   templateUrl: './color-grid.component.html',
   styleUrl: './color-grid.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ColorGridComponent {
   readonly gridSize = input.required<number>();
